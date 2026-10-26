@@ -1,0 +1,36 @@
+class Cilindro {
+    double raio;
+    double altura;
+
+    Cilindro(double raio, double altura) {
+        if (raio >= 0 && altura >= 0) {
+            this.raio = raio;
+            this.altura = altura;
+        } else {
+            this.raio = 0;
+            this.altura = 0;
+        }
+    }
+
+    public double calcularAreaLateral() {
+        return 2 * 3.1415 * raio * altura;
+    }
+
+    public double calcularAreaTotal() {
+        return 2 * 3.1415 * raio * (altura + raio);
+    }
+
+    public double calcularVolume() {
+        return 3.1415 * raio * raio * altura;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Cilindro cilindro = new Cilindro(3, 5);
+
+        System.out.println("Area lateral: " + cilindro.calcularAreaLateral());
+        System.out.println("Area total: " + cilindro.calcularAreaTotal());
+        System.out.println("Volume: " + cilindro.calcularVolume());
+    }
+}
